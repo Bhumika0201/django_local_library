@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 from decouple import config
+from django.conf import settings
 
 APP_ID = config('APP_ID', default='')
 APP_KEY = config('APP_KEY', default='')
@@ -24,12 +25,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'y+(r5za*zz(27!tnc*ij5@!v(8pik#vjz7%e%ji5di(u*d82+i'
+
+
+
+#SECRET_KEY = 'y+(r5za*zz(27!tnc*ij5@!v(8pik#vjz7%e%ji5di(u*d82+i'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'y+(r5za*zz(27!tnc*ij5@!v(8pik#vjz7%e%ji5di(u*d82+i')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
