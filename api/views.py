@@ -46,8 +46,8 @@ class ListSongsView(generics.ListAPIView):
 
 class ListCreateDataView(generics.ListCreateAPIView):
     """
-    GET songs/
-    POST songs/
+    GET data/
+    POST data/
     """
     queryset = EntryValues.objects.all()
     serializer_class = DataSerializer
@@ -67,8 +67,8 @@ class ListCreateDataView(generics.ListCreateAPIView):
         runRequestBody = {'script': request.data.get("script"),
                           'language': request.data.get("language"),
                           'versionIndex': request.data.get("versionIndex"),
-                          'clientId': settings.APP_ID,
-                          'clientSecret': settings.APP_KEY}
+                          'clientId': 'a30091c1257dee59abdb3f8151521d75',
+                          'clientSecret': '34115867169d3630715fd7c9d5e3d110750239ce6fd2646fbddb7d4db92e432f'}
         headers = {'Content-type': 'application/json'}
 
         response = requests.post('https://api.jdoodle.com/execute', data=json.dumps(runRequestBody), headers=headers)
