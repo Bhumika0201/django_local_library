@@ -22,8 +22,8 @@ def home(request):
     runRequestBody = {'script':'console.log(7+5)',
                   'language': 'nodejs',
                   'versionIndex': '1',
-                  'clientId': settings.APP_ID,
-                  'clientSecret' :  settings.APP_KEY}
+                  'clientId': 'a30091c1257dee59abdb3f8151521d75',
+                  'clientSecret' :  '34115867169d3630715fd7c9d5e3d110750239ce6fd2646fbddb7d4db92e432f'}
     headers = {'Content-type': 'application/json'}
 
     response = requests.post('https://api.jdoodle.com/execute',data=json.dumps(runRequestBody),headers=headers)
