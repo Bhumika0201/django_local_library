@@ -14,8 +14,8 @@ import os
 from decouple import config
 from django.conf import settings
 
-APP_ID = config('APP_ID', default='')
-APP_KEY = config('APP_KEY', default='')
+APP_ID = 'a30091c1257dee59abdb3f8151521d75'
+APP_KEY = '34115867169d3630715fd7c9d5e3d110750239ce6fd2646fbddb7d4db92e432f'
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
